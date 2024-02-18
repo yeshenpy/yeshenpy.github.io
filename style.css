@@ -34,23 +34,6 @@ p {line-height: 1.5em;}
 .footer-content a {color: #fff; text-decoration: underline;}
 .footer-content a:hover {color: #f09228 !important;}
 .stars {font-size: 10px; display: inline-block; margin-left: 6px; color: #666;}
-.content.row {
-    display: flex;
-    align-items: center;
-}
-.header-profile-container {
-    margin-right: 20px;
-}
-.header-profile-picture {
-    width: 150px;
-    height: 150px;
-    background-size: cover;
-    background-position: center;
-}
-.header-text-container {
-    display: flex;
-    flex-direction: column;
-}
 
 @media only screen and (max-width: 1150px) {
     .header-profile-picture, .header-text {display: block; margin: auto; text-align: center;}
