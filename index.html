@@ -20,9 +20,13 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.7) 100%), url('files/bk.png');
+            background-size: 100% auto;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
+            min-height: 200px;
         }
         
         .content {
@@ -407,6 +411,8 @@
             }
         }
     </style>
+    <!-- 不蒜子访客统计 -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </head>
 <body>
 <div class="header noselect">
@@ -420,11 +426,11 @@
                 PhD student, Tianjin University
             </div>
             <div class="header-links">
-                <a class="btn" href="#contact">Email</a> /
                 <a href="https://scholar.google.com/citations?user=U9tjvNUAAAAJ&hl=zh-CN">Google Scholar</a> /
                 <a href="https://github.com/yeshenpy">GitHub</a> /
                 <a href="https://openreview.net/profile?id=~Pengyi_Li1">OpenReview</a> /
-                <a href="https://www.zhihu.com/people/ye-shen-83-32">Zhihu</a>
+                <a href="https://www.zhihu.com/people/ye-shen-83-32">Zhihu</a> /
+                <a href="#contact">↓</a>
             </div>
         </div>
     </div>
@@ -763,7 +769,7 @@
                 <div class="row-media" style="background-image: url('files/Embodied_Arena.png');"></div>
                 <div class="row-text">
                     <a class="publication-title">Embodied Arena: A Comprehensive, Unified, and Evolving Evaluation Platform for Embodied AI</a><br/>
-                    Fei Ni, Mingsheng Zhang, <span class="bold">Pengyi Li</span>, Yifu Yuan, Li Zhang, Yong Liu, Peilong Han, Lihua Kou, Shiyin Ma, Jinbin Qiao, et al.<br/>
+                    Fei Ni, Min Zhang, <span class="bold">Pengyi Li</span>, Yifu Yuan, et al.<br/>
                     <span class="italic">arXiv preprint</span>, 2025<br/>
                     <a class="btn btn-red" href="https://arxiv.org/abs/2509.15273">ArXiv</a>
                 </div>
@@ -799,7 +805,7 @@
                 <div class="row-media" style="background-image: url('files/NN_TKCA_multi_agent.png');"></div>
                 <div class="row-text">
                     <a class="publication-title" href="https://www.sciencedirect.com/science/article/pii/S0893608025009037">Tailoring Knowledge for Empowered Cooperative Actions in Multi-agent Reinforcement Learning</a><br/>
-                    Hao Fu, Yue Tan, Haibin Chen, <span class="bold">Pengyi Li</span><br/>
+                    Hu Fu, Yihua Tan, Hao Chen, <span class="bold">Pengyi Li</span><br/>
                     <span class="italic">Neural Networks</span>, 2025<br/>
                     <a class="btn btn-red" href="https://www.sciencedirect.com/science/article/pii/S0893608025009037">Link</a>
                 </div>
@@ -1007,32 +1013,6 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/veb_github.png');"></div>
-                <div class="row-text">
-                    <a class="bold" href="https://github.com/yeshenpy/VEB-RL">VEB-RL Implementation <span class="stars"> ⭐ 20</span></a><br/>
-                    <span class="bold">Pengyi Li</span><br/>
-                    2024<br/>
-                    <a class="btn btn-orange" href="https://github.com/yeshenpy/VEB-RL">Github</a>
-                    <a class="btn btn-red" href="https://openreview.net/forum?id=XobPpcN4yZ">Paper</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="publication">
-            <div class="row">
-                <div class="row-media" style="background-image: url('files/LaRes_github.png');"></div>
-                <div class="row-text">
-                    <a class="bold" href="https://github.com/yeshenpy/LaRes">LaRes Implementation <span class="stars"> ⭐ 22</span></a><br/>
-                    <span class="bold">Pengyi Li</span><br/>
-                    2025<br/>
-                    <a class="btn btn-orange" href="https://github.com/yeshenpy/LaRes">Github</a>
-                    <a class="btn btn-red" href="https://openreview.net/forum?id=jRjvcqtdtA">Paper</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="publication">
-            <div class="row">
                 <div class="row-media" style="background-image: url('files/CORE_github.png');"></div>
                 <div class="row-text">
                     <a class="bold" href="https://github.com/yeshenpy/CORE">CORE Implementation <span class="stars"> ⭐ 7</span></a><br/>
@@ -1040,10 +1020,6 @@
                     2025<br/>
                     <a class="btn btn-orange" href="https://github.com/yeshenpy/CORE">Github</a>
                     <a class="btn btn-red" href="https://openreview.net/forum?id=86IvZmY26S">Paper</a>
-                </div>
-            </div>
-        </div>
-                    <a class="btn btn-orange" href="https://github.com/yeshenpy/CORE">Github</a>
                 </div>
             </div>
         </div>
@@ -1057,9 +1033,29 @@
         </h2>
         <p>
             You are very welcome to contact me regarding my research. I typically respond within a few days.<br/>
-            I can be contacted directly at <span class="bold">lipengyi</span> [at] <span class="bold">tju.edu.cn</span>
+            <span class="bold">lipengyi</span> [at] <span class="bold">tju.edu.cn</span>
         </p>
     </div>
+    <div class="noselect" style="margin-top: 40px;">
+        <h2 class="noselect section-title">
+            <span class="section-icon">🌍</span>
+            Site Statistics
+        </h2>
+        <p>Visitor map (powered by <a href="https://clustrmaps.com" style="color: #667eea;">ClustrMaps</a>):</p>
+        <div style="background: #f8f9fa; border-radius: 8px; padding: 20px; margin-top: 10px; text-align: center;">
+            <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=n1vTB9jO1Gq9C5NF0LQDMSoXFwwz6L9v0o3lyyzNQpY"></script>
+        </div>
+        <div style="margin-top: 15px; padding: 12px; background: linear-gradient(135deg, #f8f9fc 0%, #fff 100%); border-radius: 8px; border: 1px solid #e8ecf3; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <div style="font-size: 12px; color: #666;">
+                📊 Visitor badge: 
+                <img src="https://visitor-badge.laobi.icu/badge?page_id=yeshenpy.github.io" alt="visitor badge" style="vertical-align: middle; margin-left: 5px;" />
+            </div>
+            <div style="font-size: 11px; color: #999;">
+                Data tracked by ClustrMaps · Free forever
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 </body>
 </html>
