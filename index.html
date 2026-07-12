@@ -293,6 +293,23 @@
             line-height: 24px;
             text-align: center;
         }
+
+        .visitor-map-panel {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .visitor-map-panel img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
         
         .research-grid {
             display: grid;
@@ -1170,7 +1187,8 @@
             Site Statistics
         </h2>
         <p>Visitor map:</p>
-        <div style="background: #f8f9fa; border-radius: 8px; padding: 20px; margin-top: 10px; text-align: center;">
+        <div class="visitor-map-panel">
+            <img src="files/visitor-map-fallback.png" alt="Visitor map" />
             <script type="text/javascript" id="clstr_globe" src="https://clustrmaps.com/globe.js?d=n1vTB9jO1Gq9C5NF0LQDMSoXFwwz6L9v0o3lyyzNQpY"></script>
         </div>
         <div style="margin-top: 15px; padding: 12px; background: linear-gradient(135deg, #f8f9fc 0%, #fff 100%); border-radius: 8px; border: 1px solid #e8ecf3; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
