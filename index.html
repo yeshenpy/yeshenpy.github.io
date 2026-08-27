@@ -482,11 +482,19 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="style.css">
     <!-- 不蒜子访客统计 -->
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </head>
-<body>
+<body data-wave="aurora">
 <div class="header noselect">
+    <div class="hero-waves" aria-hidden="true">
+        <div class="hero-ripple-overlay">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
     <div class="content row">
         <div class="header-profile-picture" style="background-image: url('files/me.jpg'); width: 150px; height: 150px;"></div>
         <div class="header-text">
@@ -540,7 +548,7 @@
             Research Interest
         </h2>
         
-        <div class="research-subsection">
+        <div class="research-subsection research-theme-rl">
             <div class="research-subsection-title">Reinforcement Learning</div>
             <div class="research-grid">
                 <div class="research-item">
@@ -566,12 +574,16 @@
             </div>
         </div>
         
-        <div class="research-subsection">
+        <div class="research-subsection research-theme-embodied">
             <div class="research-subsection-title">Reinforcement Learning for Embodied AI</div>
             <div class="research-grid">
                 <div class="research-item">
                     <div class="icon"></div>
                     <div class="text">Real-robot RL</div>
+                </div>
+                <div class="research-item">
+                    <div class="icon"></div>
+                    <div class="text">Dexterous Hand Control</div>
                 </div>
                 <div class="research-item">
                     <div class="icon"></div>
@@ -587,7 +599,41 @@
                 </div>
                 <div class="research-item">
                     <div class="icon"></div>
+                    <div class="text">World Models for Embodied AI</div>
+                </div>
+                <div class="research-item">
+                    <div class="icon"></div>
                     <div class="text">Automatic Reward</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="research-subsection research-theme-agent">
+            <div class="research-subsection-title">Agent</div>
+            <div class="research-grid">
+                <div class="research-item">
+                    <div class="icon"></div>
+                    <div class="text">Agent for EDA</div>
+                </div>
+                <div class="research-item">
+                    <div class="icon"></div>
+                    <div class="text">Agent for Video Generation</div>
+                </div>
+                <div class="research-item">
+                    <div class="icon"></div>
+                    <div class="text">Agent for CAD</div>
+                </div>
+                <div class="research-item">
+                    <div class="icon"></div>
+                    <div class="text">Agent for Embodied AI</div>
+                </div>
+                <div class="research-item">
+                    <div class="icon"></div>
+                    <div class="text">Agent Self-Evolution</div>
+                </div>
+                <div class="research-item">
+                    <div class="icon"></div>
+                    <div class="text">Agent RL Post-Training</div>
                 </div>
             </div>
         </div>
@@ -599,6 +645,18 @@
             News
         </h2>
         <div class="news-section">
+            <div class="news-item">
+                <span class="news-date">Jul, 2026</span>
+                <span class="news-content">Invited talk: <span class="italic">Research and Applications of Evolutionary Reinforcement Learning Algorithms</span> @ Xiangtan University<span class="news-badge badge-talk">Talk</span></span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">Jul, 2026</span>
+                <span class="news-content">Invited talk: <span class="italic">Research and Applications of Evolutionary Reinforcement Learning Algorithms</span> @ National University of Defense Technology (NUDT)<span class="news-badge badge-talk">Talk</span></span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">Jun, 2026</span>
+                <span class="news-content">Joined the <span class="bold">School of Software at Tianjin University</span> as an <span class="bold">Associate Professor</span><span class="news-badge badge-appointment">Appointment</span></span>
+            </div>
             <div class="news-item">
                 <span class="news-date">May 8, 2026</span>
                 <span class="news-content">Selected as <span class="bold">the Outstanding PhD Graduate Representative</span> of Tianjin University<span class="news-badge badge-award">Award</span></span>
@@ -613,7 +671,7 @@
             </div>
             <div class="news-item">
                 <span class="news-date">Jan 9, 2026</span>
-                <span class="news-content">Invited to Didi Future Elite Meetup<span class="news-badge badge-talk">Event</span></span>
+                <span class="news-content">Invited to Didi Future Elite Meetup<span class="news-badge badge-event">Event</span></span>
             </div>
             <div class="news-item">
                 <span class="news-date">Jan, 2026</span>
@@ -1170,16 +1228,17 @@
             Site Statistics
         </h2>
         <p>Visitor map:</p>
-        <div style="background: #f8f9fa; border-radius: 8px; padding: 20px; margin-top: 10px; text-align: center;">
-            <script type="text/javascript" id="clstr_globe" src="https://cdn.clustrmaps.com/globe.js?d=n1vTB9jO1Gq9C5NF0LQDMSoXFwwz6L9v0o3lyyzNQpY"></script>
+        <div class="visitor-globe-shell" style="background: #f8f9fa; border-radius: 8px; padding: 20px; margin-top: 10px; text-align: center;">
+            <script type="text/javascript" id="mmvst_globe" src="https://mapmyvisitors.com/globe.js?d=5j0WbkgPCmcZc6Ij00yXOy9ISOpdze2p_no7erwfhWc"></script>
+            <noscript>Please enable JavaScript to view the visitor map.</noscript>
         </div>
-        <div style="margin-top: 15px; padding: 12px; background: linear-gradient(135deg, #f8f9fc 0%, #fff 100%); border-radius: 8px; border: 1px solid #e8ecf3; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div class="visitor-meta-bar" style="margin-top: 15px; padding: 12px; background: linear-gradient(135deg, #f8f9fc 0%, #fff 100%); border-radius: 8px; border: 1px solid #e8ecf3; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
             <div style="font-size: 12px; color: #666;">
                 📊 Visitor badge: 
                 <img src="https://visitor-badge.laobi.icu/badge?page_id=yeshenpy.github.io" alt="visitor badge" style="vertical-align: middle; margin-left: 5px;" />
             </div>
             <div style="font-size: 11px; color: #999;">
-                Data tracked by ClustrMaps · Free forever
+                New location data tracked by MapMyVisitors
             </div>
         </div>
     </div>
