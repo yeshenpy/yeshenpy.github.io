@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Pengyi Li</title>
+    <title>Pengyi Li | Reinforcement Learning &amp; Embodied AI</title>
     <meta charset="UTF-8">
     <meta name="author" content="Pengyi Li">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pengyi Li is a tenured associate professor at Tianjin University working on reinforcement learning and embodied AI.">
+    <meta name="theme-color" content="#0b1220">
+    <link rel="canonical" href="https://yeshenpy.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pengyi Li | Reinforcement Learning &amp; Embodied AI">
+    <meta property="og:description" content="Research, publications, news, and open positions in reinforcement learning and embodied AI.">
+    <meta property="og:url" content="https://yeshenpy.github.io/">
+    <meta property="og:image" content="https://yeshenpy.github.io/files/bk.png">
+    <meta name="twitter:card" content="summary_large_image">
     <style>
         * {
             margin: 0;
@@ -482,14 +491,17 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="style.css">
     <!-- 不蒜子访客统计 -->
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </head>
 <body>
-<div class="header noselect">
-    <div class="content row">
-        <div class="header-profile-picture" style="background-image: url('files/me.jpg'); width: 150px; height: 150px;"></div>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="header noselect" id="top">
+    <div class="content row hero-content">
+        <img class="header-profile-picture" src="files/me.jpg" width="150" height="150" alt="Portrait of Pengyi Li">
         <div class="header-text">
+            <div class="header-kicker">Tianjin University · Reinforcement Learning Lab</div>
             <div class="header-name">
                 <h1>Pengyi Li (李鹏翼)</h1>
             </div>
@@ -497,18 +509,33 @@
                 Tenured Associate Professor, School of Software, Tianjin University
             </div>
             <div class="header-links">
-                <a href="https://scholar.google.com/citations?user=U9tjvNUAAAAJ&hl=zh-CN">Google Scholar</a> /
-                <a href="https://github.com/yeshenpy">GitHub</a> /
-                <a href="https://openreview.net/profile?id=~Pengyi_Li1">OpenReview</a> /
-                <a href="https://www.zhihu.com/people/ye-shen-83-32">Zhihu</a> /
-                <a href="#contact">↓</a>
+                <a href="https://scholar.google.com/citations?user=U9tjvNUAAAAJ&amp;hl=zh-CN">Google Scholar</a>
+                <a href="https://github.com/yeshenpy">GitHub</a>
+                <a href="https://openreview.net/profile?id=~Pengyi_Li1">OpenReview</a>
+                <a href="https://www.zhihu.com/people/ye-shen-83-32">Zhihu</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </div>
-</div>
+</header>
 
-<div class="content" style="padding: 30px 20px 60px;">
-    <div>
+<nav class="site-nav noselect" aria-label="Primary navigation">
+    <div class="site-nav-inner">
+        <a class="site-mark" href="#top" aria-label="Back to top">PL</a>
+        <div class="site-nav-links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#news">News</a>
+            <a href="#awards">Awards</a>
+            <a href="#publications">Publications</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<main class="content page-content" id="main-content">
+    <div class="section-block" id="about">
         <h2 class="noselect">About</h2>
         <p>
             I am a Tenured Associate Professor in the School of Software at Tianjin University (TJU). During my Ph.D. studies, I was advised by Prof. Jianye Hao.
@@ -534,7 +561,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="section-block" id="research">
         <h2 class="noselect section-title">
             <span class="section-icon">⚡</span>
             Research Interest
@@ -593,7 +620,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="section-block" id="news">
         <h2 class="noselect section-title">
             <span class="section-icon">📰</span>
             News
@@ -694,7 +721,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="section-block" id="awards">
         <h2 class="noselect section-title">
             <span class="section-icon">🏆</span>
             Awards and Honors
@@ -761,7 +788,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="section-block" id="publications">
         <h2 class="noselect section-title">
             <span class="section-icon">📄</span>
             Publications and Preprints
@@ -770,9 +797,9 @@
 
         <div class="highlight publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/Nevo-CRL.png'); background-size: contain; background-repeat: no-repeat; background-color: #e9f7ef;"></div>
+                <img class="row-media" src="files/Nevo-CRL.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title bold">Neuro-evolutionary Continual Reinforcement Learning</a><br/>
+                    <a class="publication-title bold" href="https://openreview.net/forum?id=Hv0jK8xYcT">Neuro-evolutionary Continual Reinforcement Learning</a><br/>
                     <span class="bold">Pengyi Li</span>, Hongyao Tang, Yifu Yuan, Yan Zheng, Xin Xu, Jianye Hao<br/>
                     <span class="italic">International Conference on Machine Learning (ICML)</span>, 2026 <span class="bold">Spotlight</span><br/>
                     <a class="btn btn-red" href="https://openreview.net/forum?id=Hv0jK8xYcT">Link</a>
@@ -783,9 +810,9 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/TACTIC.png'); background-size: contain; background-repeat: no-repeat; background-color: #fef9e7;"></div>
+                <img class="row-media" src="files/TACTIC.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title">TACTIC: Task-Aware Sparse Coordination Graphs for Multi-Task Multi-agent Reinforcement Learning</a><br/>
+                    <a class="publication-title" href="https://openreview.net/forum?id=1AsU8u2tmC">TACTIC: Task-Aware Sparse Coordination Graphs for Multi-Task Multi-agent Reinforcement Learning</a><br/>
                     Kexing Peng, <span class="bold">Pengyi Li</span>, Tinghuai Ma, Jianye Hao<br/>
                     <span class="italic">International Conference on Machine Learning (ICML)</span>, 2026 <span class="bold">Poster</span><br/>
                     <a class="btn btn-red" href="https://openreview.net/forum?id=1AsU8u2tmC">Link</a>
@@ -795,9 +822,9 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/HPS.png'); background-size: contain; background-repeat: no-repeat; background-color: #f4ecf7;"></div>
+                <img class="row-media" src="files/HPS.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title">HPS: Hyperspherical Parameter Sharing for Efficient Multi-Agent Reinforcement Learning</a><br/>
+                    <a class="publication-title" href="https://openreview.net/forum?id=BxozGBcX7h">HPS: Hyperspherical Parameter Sharing for Efficient Multi-Agent Reinforcement Learning</a><br/>
                     Hu Fu, <span class="bold">Pengyi Li</span>, Hao Chen, Xuanyu Xiang, Biao Luo, Yihua Tan<br/>
                     <span class="italic">International Conference on Machine Learning (ICML)</span>, 2026 <span class="bold">Poster</span><br/>
                     <a class="btn btn-red" href="https://openreview.net/forum?id=BxozGBcX7h">Link</a>
@@ -807,9 +834,9 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/EmbodiedR1.png');"></div>
+                <img class="row-media" src="files/EmbodiedR1.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title">Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation</a><br/>
+                    <a class="publication-title" href="https://arxiv.org/abs/2508.13998">Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation</a><br/>
                     Yifu Yuan, Hongyan Cui, Yihong Huang, Yidi Chen, Fei Ni, Zibin Dong, <span class="bold">Pengyi Li</span>, Yan Zheng, Jianye Hao<br/>
                     <span class="italic">International Conference on Learning Representations (ICLR)</span>, 2026<br/>
                     <a class="btn btn-red" href="https://arxiv.org/abs/2508.13998">ArXiv</a>
@@ -819,9 +846,9 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/from_see_to_do.png');"></div>
+                <img class="row-media" src="files/from_see_to_do.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title">From Seeing to Doing: Bridging Reasoning and Decision for Robotic Manipulation</a><br/>
+                    <a class="publication-title" href="https://arxiv.org/abs/2505.08548">From Seeing to Doing: Bridging Reasoning and Decision for Robotic Manipulation</a><br/>
                     Yifu Yuan, Hongyan Cui, Yidi Chen, Zibin Dong, Fei Ni, Lihua Kou, Jie Liu, <span class="bold">Pengyi Li</span>, Yan Zheng, Jianye Hao<br/>
                     <span class="italic">International Conference on Learning Representations (ICLR)</span>, 2026<br/>
                     <a class="btn btn-red" href="https://arxiv.org/abs/2505.08548">ArXiv</a>
@@ -831,9 +858,9 @@
 
         <div class="highlight publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/LaRes.png');"></div>
+                <img class="row-media" src="files/LaRes.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title bold">LaRes: Evolutionary Reinforcement Learning with LLM-based Adaptive Reward Search</a><br/>
+                    <a class="publication-title bold" href="https://openreview.net/forum?id=jRjvcqtdtA">LaRes: Evolutionary Reinforcement Learning with LLM-based Adaptive Reward Search</a><br/>
                     <span class="bold">Pengyi Li</span>, Hongyao Tang, Jinbin Qiao, Yan Zheng, Jianye Hao<br/>
                     <span class="italic">Advances in Neural Information Processing Systems (NeurIPS)</span>, 2025<br/>
                     <a class="btn btn-red" href="https://openreview.net/forum?id=jRjvcqtdtA">Link</a>
@@ -844,9 +871,9 @@
 
         <div class="highlight publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/COLA.png');"></div>
+                <img class="row-media" src="files/COLA.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title bold">COLA: Towards Efficient Multi-Objective Reinforcement Learning with Conflict Objective Regularization in Latent Space</a><br/>
+                    <a class="publication-title bold" href="https://openreview.net/forum?id=Cldpn7H3NN">COLA: Towards Efficient Multi-Objective Reinforcement Learning with Conflict Objective Regularization in Latent Space</a><br/>
                     <span class="bold">Pengyi Li</span>, et al.<br/>
                     <span class="italic">Advances in Neural Information Processing Systems (NeurIPS)</span>, 2025<br/>
                     <a class="btn btn-red" href="https://openreview.net/forum?id=Cldpn7H3NN">Link</a>
@@ -857,9 +884,9 @@
 
         <div class="highlight publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/CORE.png');"></div>
+                <img class="row-media" src="files/CORE.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title bold">CORE: Collaborative Optimization with Reinforcement Learning and Evolutionary Algorithm for Floorplanning</a><br/>
+                    <a class="publication-title bold" href="https://openreview.net/forum?id=86IvZmY26S">CORE: Collaborative Optimization with Reinforcement Learning and Evolutionary Algorithm for Floorplanning</a><br/>
                     <span class="bold">Pengyi Li</span>, Shixiong Kai, Jianye Hao, Ruizhe Zhong, Hongyao Tang, Zhentao Tang, Mingxuan Yuan, Junchi Yan<br/>
                     <span class="italic">Advances in Neural Information Processing Systems (NeurIPS)</span>, 2025<br/>
                     <a class="btn btn-red" href="https://openreview.net/forum?id=86IvZmY26S">Link</a>
@@ -870,9 +897,9 @@
 
         <div class="highlight publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/EmbodiedScene.png');"></div>
+                <img class="row-media" src="files/EmbodiedScene.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title bold">EmbodiedScene: Towards Automated Generation of Diverse and Realistic Scenes for Embodied AI</a><br/>
+                    <a class="publication-title bold" href="https://embodiedscene1.github.io/embodied.scene/">EmbodiedScene: Towards Automated Generation of Diverse and Realistic Scenes for Embodied AI</a><br/>
                     Jinbin Qiao*, <span class="bold">Pengyi Li*</span>, Peilong Han, Yan Zheng, Jianye HAO<br/>
                     <span class="italic">International Conference on Machine Learning (ICML)</span> World Model Workshop <span class="bold">Best Paper</span>, 2025<br/>
                     <a class="btn btn-orange" href="https://embodiedscene1.github.io/embodied.scene/">Project Link</a>
@@ -882,9 +909,9 @@
 
         <div class="highlight publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/R.png');"></div>
+                <img class="row-media" src="files/R.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title bold">R*: Efficient Reward Design via Reward Structure Evolution and Parameter Alignment Optimization with Large Language Models</a><br/>
+                    <a class="publication-title bold" href="https://openreview.net/forum?id=qZMLrURRr9">R*: Efficient Reward Design via Reward Structure Evolution and Parameter Alignment Optimization with Large Language Models</a><br/>
                     <span class="bold">Pengyi Li</span>, Jianye Hao, Hongyao Tang, Yifu Yuan, Jinbin Qiao, Zibin Dong, Yan Zheng<br/>
                     <span class="italic">International Conference on Machine Learning (ICML)</span>, 2025<br/>
                     <a class="btn btn-red" href="https://openreview.net/forum?id=qZMLrURRr9">Link</a>
@@ -894,9 +921,9 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/Embodied_Arena.png');"></div>
+                <img class="row-media" src="files/Embodied_Arena.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title">Embodied Arena: A Comprehensive, Unified, and Evolving Evaluation Platform for Embodied AI</a><br/>
+                    <a class="publication-title" href="https://arxiv.org/abs/2509.15273">Embodied Arena: A Comprehensive, Unified, and Evolving Evaluation Platform for Embodied AI</a><br/>
                     Fei Ni, Min Zhang, <span class="bold">Pengyi Li</span>, Yifu Yuan, et al.<br/>
                     <span class="italic">arXiv preprint</span>, 2025<br/>
                     <a class="btn btn-red" href="https://arxiv.org/abs/2509.15273">ArXiv</a>
@@ -906,9 +933,9 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/AMMAS_graph_MARL.png');"></div>
+                <img class="row-media" src="files/AMMAS_graph_MARL.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title">Enhancing Graph-based Coordination with Evolutionary Algorithms for Episodic Multi-agent Reinforcement Learning</a><br/>
+                    <a class="publication-title" href="https://dl.acm.org/doi/abs/10.5555/3691841.3691868">Enhancing Graph-based Coordination with Evolutionary Algorithms for Episodic Multi-agent Reinforcement Learning</a><br/>
                     Kexin Peng, <span class="bold">Pengyi Li</span>, Jianye Hao<br/>
                     <span class="italic">International Conference on Autonomous Agents and Multiagent Systems (AAMAS)</span>, 2025 (Oral)<br/>
                     <a class="btn btn-red" href="https://dl.acm.org/doi/abs/10.5555/3691841.3691868">Link</a>
@@ -918,7 +945,7 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/IEEE_CYB_signal.png');"></div>
+                <img class="row-media" src="files/IEEE_CYB_signal.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="publication-title" href="https://ieeexplore.ieee.org/abstract/document/11296869/">Signaling-Driven Incentive Communication for Enhanced Multiagent Reinforcement Learning in Dynamic Environments</a><br/>
                     Kexin Peng, <span class="bold">Pengyi Li</span>, Jianye Hao<br/>
@@ -930,7 +957,7 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/NN_TKCA_multi_agent.png');"></div>
+                <img class="row-media" src="files/NN_TKCA_multi_agent.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="publication-title" href="https://www.sciencedirect.com/science/article/pii/S0893608025009037">Tailoring Knowledge for Empowered Cooperative Actions in Multi-agent Reinforcement Learning</a><br/>
                     Hu Fu, Yihua Tan, Hao Chen, <span class="bold">Pengyi Li</span><br/>
@@ -942,7 +969,7 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/clean.jpg');"></div>
+                <img class="row-media" src="files/clean.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="publication-title" href="https://arxiv.org/abs/2406.09509">CleanDiffuser: An Easy-to-use Modularized Library for Diffusion Models in Decision Making</a><br/>
                     Zibin Dong, Yifu Yuan, Jianye Hao, Fei Ni, Yi Ma, <span class="bold">Pengyi Li</span>, Yan Zheng<br/>
@@ -955,9 +982,9 @@
 
         <div class="highlight publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/EvoRainbow.jpg');"></div>
+                <img class="row-media" src="files/EvoRainbow.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title bold">EvoRainbow: Combining Improvements in Evolutionary Reinforcement Learning for Policy Search</a><br/>
+                    <a class="publication-title bold" href="https://openreview.net/forum?id=75Hes6Zse4">EvoRainbow: Combining Improvements in Evolutionary Reinforcement Learning for Policy Search</a><br/>
                     <span class="bold">Pengyi Li</span>, Yan Zheng, Hongyao Tang, Xian Fu, Jianye Hao<br/>
                     <span class="italic">International Conference on Machine Learning (ICML)</span>, 2024<br/>
                     <a class="btn btn-red" href="https://openreview.net/forum?id=75Hes6Zse4">Link</a>
@@ -968,9 +995,9 @@
 
         <div class="highlight publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/VEB.jpg');"></div>
+                <img class="row-media" src="files/VEB.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
-                    <a class="publication-title bold">Value-Evolutionary-Based Reinforcement Learning</a><br/>
+                    <a class="publication-title bold" href="https://openreview.net/forum?id=XobPpcN4yZ">Value-Evolutionary-Based Reinforcement Learning</a><br/>
                     <span class="bold">Pengyi Li</span>, Jianye Hao, Hongyao Tang, Yan Zheng, Fazl Barez<br/>
                     <span class="italic">International Conference on Machine Learning (ICML)</span>, 2024<br/>
                     <a class="btn btn-red" href="https://openreview.net/forum?id=XobPpcN4yZ">Link</a>
@@ -981,7 +1008,7 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/diffusion_lite.jpg');"></div>
+                <img class="row-media" src="files/diffusion_lite.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="publication-title" href="https://arxiv.org/abs/2401.15443">DiffuserLite: Towards Real-time Diffusion Planning</a><br/>
                     Zibin Dong, Jianye Hao, Yifu Yuan, Fei Ni, Yitian Wang, <span class="bold">Pengyi Li</span>, Yan Zheng<br/>
@@ -993,7 +1020,7 @@
 
         <div class="highlight publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/bridge.jpg');"></div>
+                <img class="row-media" src="files/bridge.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="publication-title bold" href="https://arxiv.org/abs/2401.11963">Bridging Evolutionary Algorithms and Reinforcement Learning: A Comprehensive Survey</a><br/>
                     <span class="bold">Pengyi Li</span>, Jianye Hao, Hongyao Tang, Xian Fu, Yan Zheng, Ke Tang<br/>
@@ -1006,7 +1033,7 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/CCQD.jpg');"></div>
+                <img class="row-media" src="files/CCQD.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="publication-title" href="https://openreview.net/forum?id=JDud6zbpFv">Sample-Efficient Quality-Diversity by Cooperative Coevolution</a><br/>
                     Ke Xue, Ren-Jian Wang, <span class="bold">Pengyi Li</span>, Dong Li, Jianye Hao, Chao Qian<br/>
@@ -1018,7 +1045,7 @@
 
         <div class="highlight publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/RACE.jpg');"></div>
+                <img class="row-media" src="files/RACE.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="publication-title bold" href="https://proceedings.mlr.press/v202/li23i.html">RACE: Improve Multi-Agent Reinforcement Learning with Representation Asymmetry and Collaborative Evolution</a><br/>
                     <span class="bold">Pengyi Li</span>, Jianye Hao, Hongyao Tang, Yan Zheng, Xian Fu<br/>
@@ -1031,7 +1058,7 @@
 
         <div class="highlight publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/ERL-Re2.jpg');"></div>
+                <img class="row-media" src="files/ERL-Re2.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="publication-title bold" href="https://arxiv.org/abs/2210.17375">ERL-Re^2: Efficient Evolutionary Reinforcement Learning with Shared State Representation and Individual Policy Representation</a><br/>
                     Jianye Hao, <span class="bold">Pengyi Li</span> (Student First Author), Hongyao Tang, Yan Zheng, Xian Fu, Zhaopeng Meng<br/>
@@ -1044,7 +1071,7 @@
 
         <div class="highlight publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/PMIC.jpg');"></div>
+                <img class="row-media" src="files/PMIC.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="publication-title bold" href="https://proceedings.mlr.press/v162/li22s.html">PMIC: Improving Multi-Agent Reinforcement Learning with Progressive Mutual Information Collaboration</a><br/>
                     <span class="bold">Pengyi Li</span>, Hongyao Tang, Tianpei Yang, Xiaotian Hao, Tong Sang, Yan Zheng, Jianye Hao, Matthew E. Taylor, Wenyuan Tao, Zhen Wang<br/>
@@ -1057,7 +1084,7 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/hyar.jpg');"></div>
+                <img class="row-media" src="files/hyar.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="publication-title" href="https://arxiv.org/abs/2109.05490">HyAR: Addressing Discrete-Continuous Action Reinforcement Learning via Hybrid Action Representation</a><br/>
                     Boyan Li, Hongyao Tang, Yan Zheng, Jianye Hao, <span class="bold">Pengyi Li</span>, Zhen Wang, Zhaopeng Meng, Li Wang<br/>
@@ -1068,7 +1095,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="section-block" id="projects">
         <h2 class="noselect section-title">
             <span class="section-icon">💻</span>
             Misc. Open-source Projects
@@ -1076,7 +1103,7 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/git_bridge.jpg');"></div>
+                <img class="row-media" src="files/git_bridge.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="bold" href="https://github.com/yeshenpy/Awesome-Evolutionary-Reinforcement-Learning">Awesome-Evolutionary-Reinforcement-Learning<span class="stars" data-repo="yeshenpy/Awesome-Evolutionary-Reinforcement-Learning"> ⭐ 352</span></a><br/>
                     <span class="bold">Pengyi Li</span><br/>
@@ -1089,7 +1116,7 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/git_re2.jpg');"></div>
+                <img class="row-media" src="files/git_re2.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="bold" href="https://github.com/yeshenpy/ERL-Re2">ERL-Re^2 Implementation <span class="stars" data-repo="yeshenpy/ERL-Re2"> ⭐ 72</span></a><br/>
                     <span class="bold">Pengyi Li</span><br/>
@@ -1102,7 +1129,7 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/git_RACE.jpg');"></div>
+                <img class="row-media" src="files/git_RACE.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="bold" href="https://github.com/yeshenpy/RACE">RACE Implementation <span class="stars" data-repo="yeshenpy/RACE"> ⭐ 43</span></a><br/>
                     <span class="bold">Pengyi Li</span><br/>
@@ -1115,7 +1142,7 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/git_PMIC.jpg');"></div>
+                <img class="row-media" src="files/git_PMIC.jpg" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="bold" href="https://github.com/yeshenpy/PMIC">PMIC Implementation <span class="stars" data-repo="yeshenpy/PMIC"> ⭐ 22</span></a><br/>
                     <span class="bold">Pengyi Li</span><br/>
@@ -1128,7 +1155,7 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/EvoRainbow_github.png');"></div>
+                <img class="row-media" src="files/EvoRainbow_github.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="bold" href="https://github.com/yeshenpy/EvoRainbow">EvoRainbow Implementation <span class="stars" data-repo="yeshenpy/EvoRainbow"> ⭐ 35</span></a><br/>
                     <span class="bold">Pengyi Li</span><br/>
@@ -1141,7 +1168,7 @@
 
         <div class="publication">
             <div class="row">
-                <div class="row-media" style="background-image: url('files/CORE_github.png');"></div>
+                <img class="row-media" src="files/CORE_github.png" alt="" loading="lazy" decoding="async">
                 <div class="row-text">
                     <a class="bold" href="https://github.com/yeshenpy/CORE">CORE Implementation <span class="stars" data-repo="yeshenpy/CORE"> ⭐ 7</span></a><br/>
                     <span class="bold">Pengyi Li</span><br/>
@@ -1153,8 +1180,7 @@
         </div>
     </div>
 
-    <div class="noselect">
-        <a id="contact"></a>
+    <div class="section-block noselect" id="contact">
         <h2 class="noselect section-title">
             <span class="section-icon">✉️</span>
             Contact
@@ -1164,27 +1190,30 @@
             <span class="bold">lipengyi</span> [at] <span class="bold">tju.edu.cn</span>
         </p>
     </div>
-    <div class="noselect" style="margin-top: 40px;">
+    <div class="section-block noselect" id="statistics">
         <h2 class="noselect section-title">
             <span class="section-icon">🌍</span>
             Site Statistics
         </h2>
         <p>Visitor map:</p>
-        <div style="background: #f8f9fa; border-radius: 8px; padding: 20px; margin-top: 10px; text-align: center;">
+        <div class="visitor-map">
             <script type="text/javascript" id="clstr_globe" src="https://cdn.clustrmaps.com/globe.js?d=n1vTB9jO1Gq9C5NF0LQDMSoXFwwz6L9v0o3lyyzNQpY"></script>
         </div>
-        <div style="margin-top: 15px; padding: 12px; background: linear-gradient(135deg, #f8f9fc 0%, #fff 100%); border-radius: 8px; border: 1px solid #e8ecf3; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-            <div style="font-size: 12px; color: #666;">
+        <div class="visitor-meta">
+            <div>
                 📊 Visitor badge: 
-                <img src="https://visitor-badge.laobi.icu/badge?page_id=yeshenpy.github.io" alt="visitor badge" style="vertical-align: middle; margin-left: 5px;" />
+                <img src="https://visitor-badge.laobi.icu/badge?page_id=yeshenpy.github.io" alt="Visitor count badge" loading="lazy">
             </div>
-            <div style="font-size: 11px; color: #999;">
+            <div class="visitor-note">
                 Data tracked by ClustrMaps · Free forever
             </div>
         </div>
     </div>
-</div>
-</div>
+</main>
+<footer class="site-footer">
+    <div>Pengyi Li · Reinforcement Learning &amp; Embodied AI</div>
+    <a href="#top">Back to top ↑</a>
+</footer>
 <script>
         (function () {
             const starNodes = Array.from(document.querySelectorAll(".stars[data-repo]"));
