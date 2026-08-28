@@ -452,6 +452,71 @@
         .award-highlight .award-title {
             color: #856404;
         }
+
+        .visitor-globe-shell {
+            position: relative;
+            min-height: 380px;
+            margin-top: 10px;
+            overflow: hidden;
+            border: 1px solid #e5eaf2;
+            border-radius: 14px;
+            background:
+                radial-gradient(circle at 50% 42%, rgba(204, 232, 255, 0.95) 0, rgba(232, 242, 252, 0.86) 38%, rgba(248, 249, 252, 0.98) 72%),
+                #f8f9fa;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        .visitor-globe-canvas {
+            display: flex;
+            width: 100%;
+            min-height: 340px;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+        }
+
+        .visitor-globe-canvas:active {
+            cursor: grabbing;
+        }
+
+        .visitor-globe-canvas canvas {
+            display: block;
+            max-width: 100%;
+        }
+
+        .visitor-globe-status {
+            position: absolute;
+            right: 14px;
+            bottom: 12px;
+            left: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 8px 12px;
+            border: 1px solid rgba(220, 228, 238, 0.9);
+            border-radius: 9px;
+            background: rgba(255, 255, 255, 0.88);
+            color: #596579;
+            font-size: 12px;
+            backdrop-filter: blur(8px);
+        }
+
+        .visitor-globe-status a {
+            color: #3157a4;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .visitor-globe-tooltip {
+            padding: 7px 9px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 7px;
+            background: rgba(16, 27, 45, 0.92);
+            color: #fff;
+            font: 12px/1.4 Arial, sans-serif;
+        }
         
         @media (max-width: 600px) {
             .row {
@@ -479,6 +544,14 @@
             
             .news-date {
                 min-width: auto;
+            }
+
+            .visitor-globe-shell {
+                min-height: 330px;
+            }
+
+            .visitor-globe-canvas {
+                min-height: 290px;
             }
         }
     </style>
@@ -1227,11 +1300,13 @@
             <span class="section-icon">🌍</span>
             Site Statistics
         </h2>
-        <p>Visitor map:</p>
-        <div class="visitor-globe-shell" style="background: #f8f9fa; border-radius: 8px; padding: 20px; margin-top: 10px; text-align: center;">
-            <a href="https://mapmyvisitors.com/web/1c7r9" title="Visit tracker">
-                <img src="https://mapmyvisitors.com/map.png?d=fIL_jCO_c1hAnUcDlm0owFXARLZ6XhA1X1-qdaW1w1g&amp;cl=ffffff" alt="Visitor location map" style="max-width: 100%; height: auto;" />
-            </a>
+        <p>Visitor globe:</p>
+        <div class="visitor-globe-shell">
+            <div id="visitor-globe" class="visitor-globe-canvas" role="img" aria-label="Rotating globe showing visitor locations"></div>
+            <div class="visitor-globe-status">
+                <span id="visitor-globe-status">Loading visitor locations…</span>
+                <a href="https://mapmyvisitors.com/web/1c7r9">View details</a>
+            </div>
         </div>
         <div class="visitor-meta-bar" style="margin-top: 15px; padding: 12px; background: linear-gradient(135deg, #f8f9fc 0%, #fff 100%); border-radius: 8px; border: 1px solid #e8ecf3; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
             <div style="font-size: 12px; color: #666;">
@@ -1245,6 +1320,158 @@
     </div>
 </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/globe.gl@2.46.1/dist/globe.gl.min.js"></script>
+<script>
+        (function () {
+            const container = document.getElementById("visitor-globe");
+            const status = document.getElementById("visitor-globe-status");
+            if (!container || !status || typeof Globe !== "function") {
+                if (status) {
+                    status.textContent = "Visitor globe is unavailable.";
+                }
+                return;
+            }
+
+            const globe = Globe({
+                animateIn: false,
+                rendererConfig: {
+                    alpha: true,
+                    antialias: true
+                }
+            })(container)
+                .backgroundColor("rgba(0,0,0,0)")
+                .globeImageUrl("https://cdn.jsdelivr.net/npm/three-globe@2.45.1/example/img/earth-blue-marble.jpg")
+                .bumpImageUrl("https://cdn.jsdelivr.net/npm/three-globe@2.45.1/example/img/earth-topology.png")
+                .showAtmosphere(true)
+                .atmosphereColor("#5eaaf5")
+                .atmosphereAltitude(0.18)
+                .pointLat("lat")
+                .pointLng("lng")
+                .pointColor((point) => point.recent ? "#ffb21d" : "#ff3b30")
+                .pointAltitude((point) => 0.025 + Math.min(point.visits, 20) * 0.002)
+                .pointRadius((point) => 0.32 + Math.min(Math.log2(point.visits + 1) * 0.2, 0.8))
+                .pointLabel((point) => {
+                    const tooltip = document.createElement("div");
+                    tooltip.className = "visitor-globe-tooltip";
+                    tooltip.textContent = point.name;
+                    return tooltip;
+                })
+                .ringsData([])
+                .ringLat("lat")
+                .ringLng("lng")
+                .ringColor((point) => () => point.recent ? "rgba(255,178,29,0.85)" : "rgba(255,59,48,0.75)")
+                .ringMaxRadius(2.2)
+                .ringPropagationSpeed(1.15)
+                .ringRepeatPeriod(1450)
+                .pointOfView({
+                    lat: 22,
+                    lng: 105,
+                    altitude: 2.15
+                }, 0);
+
+            const controls = globe.controls();
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 0.7;
+            controls.enableDamping = true;
+            controls.enablePan = false;
+            controls.minDistance = 180;
+            controls.maxDistance = 500;
+
+            function resizeGlobe() {
+                const availableWidth = Math.max(container.clientWidth, 280);
+                const size = Math.min(availableWidth, window.innerWidth <= 600 ? 310 : 370);
+                globe.width(size).height(size);
+            }
+
+            resizeGlobe();
+            if (typeof ResizeObserver === "function") {
+                const observer = new ResizeObserver(resizeGlobe);
+                observer.observe(container);
+            } else {
+                window.addEventListener("resize", resizeGlobe);
+            }
+
+            const callbackName = "visitorGlobeCallback_" + Date.now().toString(36);
+            const request = document.createElement("script");
+            let completed = false;
+
+            function finishRequest() {
+                if (request.parentNode) {
+                    request.parentNode.removeChild(request);
+                }
+                try {
+                    delete window[callbackName];
+                } catch (error) {
+                    window[callbackName] = undefined;
+                }
+            }
+
+            window[callbackName] = function (payload) {
+                completed = true;
+                const points = [];
+                const pattern = /\{latLng:\s*\[\s*(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)\s*\],\s*name:\s*"((?:\\.|[^"])*)"\}/g;
+                let match;
+
+                while ((match = pattern.exec(String(payload))) !== null) {
+                    const name = match[3]
+                        .replace(/\\"/g, "\"")
+                        .replace(/\\\//g, "/")
+                        .replace(/\\\\/g, "\\");
+                    const visitsMatch = name.match(/^([\d,]+)\s+(recent\s+)?visits?\s+from\s+/i);
+                    const visits = visitsMatch ? Number(visitsMatch[1].replace(/,/g, "")) : 1;
+                    points.push({
+                        lat: Number(match[1]),
+                        lng: Number(match[2]),
+                        name,
+                        visits,
+                        recent: Boolean(visitsMatch && visitsMatch[2])
+                    });
+                }
+
+                globe.pointsData(points).ringsData(points);
+
+                if (points.length) {
+                    const focusPoint = points.find(function (point) {
+                        return !/unknown location/i.test(point.name);
+                    }) || points[0];
+                    controls.autoRotate = false;
+                    globe.pointOfView({
+                        lat: focusPoint.lat,
+                        lng: focusPoint.lng,
+                        altitude: 2.15
+                    }, 0);
+                    window.setTimeout(function () {
+                        controls.autoRotate = true;
+                    }, 1000);
+                    const visits = points.reduce((sum, point) => sum + point.visits, 0);
+                    status.textContent = visits.toLocaleString("en-US") + " visits · " + points.length + (points.length === 1 ? " location" : " locations");
+                } else {
+                    status.textContent = "No visitor locations recorded yet.";
+                }
+
+                finishRequest();
+            };
+
+            request.async = true;
+            request.src = "https://mapmyvisitors.com/widget_call_home.js?callback=" +
+                encodeURIComponent(callbackName) +
+                "&d=fIL_jCO_c1hAnUcDlm0owFXARLZ6XhA1X1-qdaW1w1g&cl=ffffff&w=300&t=m&_=" +
+                Date.now();
+            request.onerror = function () {
+                completed = true;
+                status.textContent = "Visitor locations could not be loaded.";
+                finishRequest();
+            };
+            document.body.appendChild(request);
+
+            window.setTimeout(function () {
+                if (!completed) {
+                    status.textContent = "Visitor locations are taking longer than expected.";
+                    finishRequest();
+                }
+            }, 12000);
+        })();
+    </script>
 <script>
         (function () {
             const starNodes = Array.from(document.querySelectorAll(".stars[data-repo]"));
