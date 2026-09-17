@@ -9,6 +9,9 @@
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const lowPower = typeof navigator.hardwareConcurrency === "number"
+        && navigator.hardwareConcurrency <= 4;
+    const targetFrameMs = lowPower ? 1000 / 40 : 1000 / 60;
     const pointer = { x: 0, y: 0, active: false };
     let width = 0;
     let height = 0;
@@ -42,10 +45,11 @@
         const bounds = header.getBoundingClientRect();
         width = bounds.width;
         height = bounds.height;
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
         canvas.width = Math.round(width * dpr);
         canvas.height = Math.round(height * dpr);
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.imageSmoothingEnabled = true;
         focus.x = width * 0.73;
         focus.y = height * 0.5;
         resetWaveInteraction();
@@ -73,14 +77,9 @@
         if (waveRipples.length > 8) waveRipples.shift();
     }
 
-    function attraction(dx, dy, influence) {
-        const pull = Math.min(0.84, influence * 0.82);
-        return { x: -dx * pull, lift: dy * pull + influence * 10 };
-    }
-
     function drawWaves(dt) {
-        const columns = width < 650 ? 36 : 76;
-        const rows = width < 650 ? 20 : 28;
+        const columns = width < 650 ? 34 : (lowPower ? 56 : 68);
+        const rows = width < 650 ? 18 : (lowPower ? 22 : 26);
         const sway = (focus.x / width - 0.73) * 48;
         const active = pointer.active && !reducedMotion.matches;
         const brushEase = 1 - Math.exp(-dt * 12);
@@ -116,9 +115,9 @@
                 const distance = Math.hypot(dx, dy * 1.35);
                 const influence = Math.exp(-distance * distance / (brushRadius * brushRadius))
                     * waveBrush.strength;
-                const hover = attraction(dx, dy, influence);
-                let offsetX = hover.x;
-                let lift = hover.lift;
+                const hoverPull = Math.min(0.84, influence * 0.82);
+                let offsetX = -dx * hoverPull;
+                let lift = dy * hoverPull + influence * 10;
                 let energy = influence * 0.55;
                 for (const ripple of impulses) {
                     const rx = x - ripple.x;
@@ -129,9 +128,9 @@
                     const spread = brushRadius * 1.25;
                     const envelope = Math.exp(-radialDistance * radialDistance / (spread * spread))
                         * pulse * ripple.strength;
-                    const force = attraction(rx, y - ripple.y, envelope);
-                    offsetX += force.x;
-                    lift += force.lift;
+                    const ripplePull = Math.min(0.84, envelope * 0.82);
+                    offsetX -= rx * ripplePull;
+                    lift += (y - ripple.y) * ripplePull + envelope * 10;
                     energy += envelope * 0.6;
                 }
                 const edge = Math.min(1, u * 7, (1 - u) * 7);
@@ -149,6 +148,10 @@
 
     function animate(time) {
         frame = null;
+        if (lastTime && time - lastTime < targetFrameMs) {
+            frame = window.requestAnimationFrame(animate);
+            return;
+        }
         // Cap long frame gaps so resuming a tab never jumps the particles.
         const dt = lastTime ? Math.min((time - lastTime) / 1000, 0.05) : 0;
         lastTime = time;
