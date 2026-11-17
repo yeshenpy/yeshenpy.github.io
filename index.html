@@ -509,9 +509,9 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="style.css?v=20260917e">
+    <link rel="stylesheet" href="style.css?v=20261117a">
     <script src="particles.js" defer></script>
-    <script src="site.js?v=20260917d" defer></script>
+    <script src="site.js?v=20261117a" defer></script>
 </head>
 <body data-wave="aurora">
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -1486,7 +1486,11 @@
         </h2>
         <p>Visitor globe:</p>
         <div class="visitor-globe-official-host visitor-globe-shell">
-            <script type="text/javascript" id="mmvst_globe" src="https://mapmyvisitors.com/globe.js?d=fIL_jCO_c1hAnUcDlm0owFXARLZ6XhA1X1-qdaW1w1g&amp;w=400"></script>
+            <div class="visitor-globe-fallback" role="status" aria-live="polite">
+                <div class="visitor-globe-fallback-icon" aria-hidden="true">🌍</div>
+                <span>Visitor globe is temporarily unavailable.</span>
+            </div>
+            <script type="text/javascript" id="mmvst_globe" async src="https://mapmyvisitors.com/globe.js?d=fIL_jCO_c1hAnUcDlm0owFXARLZ6XhA1X1-qdaW1w1g&amp;w=400"></script>
         </div>
         <div class="visitor-meta-bar" style="margin-top: 15px; padding: 12px; background: linear-gradient(135deg, #f8f9fc 0%, #fff 100%); border-radius: 8px; border: 1px solid #e8ecf3; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
             <div style="font-size: 12px; color: #666;">
@@ -1494,7 +1498,7 @@
                 <img src="https://visitor-badge.laobi.icu/badge?page_id=yeshenpy.github.io" alt="Visitor count badge" loading="lazy" decoding="async" style="vertical-align: middle; margin-left: 5px;" />
             </div>
             <div style="font-size: 11px; color: #999;">
-                New location data tracked by MapMyVisitors
+                Visitor locations provided by MapMyVisitors when available
             </div>
         </div>
     </div>

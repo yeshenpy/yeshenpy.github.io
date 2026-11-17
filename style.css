@@ -956,6 +956,37 @@ p {
     display: block !important;
 }
 
+.visitor-globe-shell:not(.is-ready) {
+    min-height: 350px;
+}
+
+.visitor-globe-fallback {
+    display: flex;
+    min-height: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.visitor-globe-fallback-icon {
+    display: grid;
+    width: 152px;
+    height: 152px;
+    place-items: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #d7f6ff, #a6dce8 52%, #4e91bd);
+    box-shadow: 0 18px 42px rgba(21, 84, 209, 0.18);
+    font-size: 96px;
+    line-height: 1;
+}
+
+.visitor-globe-shell.is-ready .visitor-globe-fallback {
+    display: none;
+}
+
 .visitor-meta-bar {
     width: min(100%, 720px);
     margin: 18px auto 0 !important;

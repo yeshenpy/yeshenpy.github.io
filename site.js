@@ -90,4 +90,20 @@
             .finally(() => pendingRepos.delete(repo));
     }, "800px 0px");
 
+    const globeHost = document.querySelector(".visitor-globe-shell");
+    if (globeHost) {
+        const showGlobeWhenReady = () => {
+            if (!globeHost.querySelector(".mmvst_map_b, .mmvst_map_f")) return false;
+            globeHost.classList.add("is-ready");
+            return true;
+        };
+
+        if (!showGlobeWhenReady()) {
+            const globeObserver = new MutationObserver(() => {
+                if (showGlobeWhenReady()) globeObserver.disconnect();
+            });
+            globeObserver.observe(globeHost, { childList: true, subtree: true });
+        }
+    }
+
 })();
